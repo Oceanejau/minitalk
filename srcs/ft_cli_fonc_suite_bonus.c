@@ -1,15 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_cli_fonc_suite_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 17:14:34 by ojauregu          #+#    #+#             */
-/*   Updated: 2021/12/27 17:15:17 by ojauregu         ###   ########.fr       */
+/*   Created: 2021/12/27 19:24:25 by ojauregu          #+#    #+#             */
+/*   Updated: 2021/12/27 19:24:28 by ojauregu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "minitalk.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t				index;
+	unsigned char		*p;
+
+	p = (unsigned char *)b;
+	index = 0;
+	while (index < len)
+	{
+		p[index] = (unsigned char)c;
+		index++;
+	}
+	return (b);
+}
 
 static int	ft_isspace(char c)
 {

@@ -5,58 +5,63 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/27 17:51:22 by ojauregu          #+#    #+#              #
-#    Updated: 2021/12/27 17:51:26 by ojauregu         ###   ########.fr        #
+#    Created: 2021/12/27 19:27:28 by ojauregu          #+#    #+#              #
+#    Updated: 2021/12/27 19:39:43 by ojauregu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-SERVER   = server
-CLIENT   = client
 
-CC	     = gcc
-FLAGS    = -Wall -Werror -Wextra -c
-NAME     = minitalk
+NAME1		= client
+NAME2		= server
+C_FILES1	= ft_client.c\
+				ft_cli_fonc.c\
+				ft_cli_fonc_suite.c
+C_FILES2	= ft_server.c\
+			  ft_ser_fonc.c\
+			 ft_ser_fonc_suite.c
+C_FILES3	= ft_client_bonus.c	\
+			 ft_cli_fonc_bonus.c\
+			 ft_cli_fonc_suite_bonus.c
+C_FILES4	= ft_server_bonus.c\
+			  ft_ser_fonc_bonus.c\
+			  ft_ser_fonc_suite_bonus.c
+SRCS1		= $(addprefix srcs/,$(C_FILES1))
+SRCS2		= $(addprefix srcs/,$(C_FILES2))
+SRCS3		= $(addprefix srcs/,$(C_FILES1))
+SRCS4		= $(addprefix srcs/,$(C_FILES2))
+OBJS1		= $(SRCS1:.c=.o)
+OBJS2		= $(SRCS2:.c=.o)
+OBJS3		= $(SRCS3:.c=.o)
+OBJS4		= $(SRCS4:.c=.o)
 
-LIBFT	 = libft.a
-LIB		 = -L./libft -lft
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror	\
+			  -I ./includes
 
-SERVER_B_OBJ = ft_server_bonus.o
-CLIENT_B_OBJ = ft_client_bonus.o
-SERVER_OBJ = ft_server.o
-CLIENT_OBJ = ft_client.o
+.c.o:
+			$(CC) $(CFLAGS) $(CINCLUDES) -c $< -o $(<:.c=.o)
 
+all:		$(NAME1) $(NAME2)
 
-all : $(NAME)
+$(NAME1):	$(OBJS1)
+			$(CC) $(CFLAGS) $(OBJS1) -o $(NAME1)
 
-$(NAME)	: $(LIBFT) $(SERVER) $(CLIENT)
+$(NAME2):	$(OBJS2)
+			$(CC) $(CFLAGS) $(OBJS2) -o $(NAME2)
 
-bonus : 
-	make $(SERVER_B) $(CLIENT_B)
-	
-$(LIBFT)  :
-	make -C libft
+bonus:		$(NAME3) $(NAME4)
 
-$(SERVER) : $(SERVER_OBJ) 
-	$(CC) $< $(LIB) -o $@
-	
-$(CLIENT) : $(CLIENT_OBJ)
-	$(CC) $< $(LIB) -o $@
-	
-$(SERVER_B) : $(SERVER_B_OBJ) 
-	$(CC) $< $(LIB) -o $@
-	
-$(CLIENT_B) : $(CLIENT_B_OBJ)
-	$(CC) $< $(LIB) -o $@
+$(NAME3):	$(OBJS3)
+			$(CC) $(CFLAGS) $(OBJS3) -o $(NAME1)
 
-%.o : %.c
-	$(CC) $(FLAGS) $< -o $@ -I. 
+$(NAME4):	$(OBJS4)
+			$(CC) $(CFLAGS) $(OBJS4) -o $(NAME2)
 
-clean :
-	make clean -C libft
-	rm -f *.o
+clean:
+			rm -f $(OBJS1) $(OBJS2) $(OBJS3) $(OBJS4)
 
-fclean: clean
-	make fclean -C libft
-	rm -f $(SERVER) $(CLIENT)
-re: fclean all
+fclean:		clean
+			rm -f $(NAME1) $(NAME2) $(NAME3) $(NAME4)
 
-.PHONY:        all clean fclean re
+re:			fclean all
+
+.PHONY:		all bonus clean fclean re

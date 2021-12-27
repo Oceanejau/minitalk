@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 17:13:22 by ojauregu          #+#    #+#             */
-/*   Updated: 2021/12/27 17:13:53 by ojauregu         ###   ########.fr       */
+/*   Created: 2021/12/27 17:16:23 by ojauregu          #+#    #+#             */
+/*   Updated: 2021/12/27 19:30:07 by ojauregu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#ifndef MINITALK_H
+# define MINITALK_H
+# include <signal.h>
+# define BUFFER 2048
 
-void	*ft_memset(void *b, int c, size_t len)
+typedef struct s_minit
 {
-	size_t				index;
-	unsigned char		*p;
+	unsigned int	bit;
+	char			message[BUFFER];
+	int				index;
+	int				end;
+	int				over;
+}				t_minit;
 
-	p = (unsigned char *)b;
-	index = 0;
-	while (index < len)
-	{
-		p[index] = (unsigned char)c;
-		index++;
-	}
-	return (b);
-}
+t_minit			g_minit;
+#endif

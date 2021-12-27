@@ -1,15 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_ser_fonc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 17:13:02 by ojauregu          #+#    #+#             */
-/*   Updated: 2021/12/27 17:13:11 by ojauregu         ###   ########.fr       */
+/*   Created: 2021/12/27 19:26:04 by ojauregu          #+#    #+#             */
+/*   Updated: 2021/12/27 19:26:10 by ojauregu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "minitalk.h"
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, sizeof(char));
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	length;
+
+	length = 0;
+	while (*s)
+	{
+		length++;
+		s++;
+	}
+	return (length);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (s)
+		write(fd, s, ft_strlen(s));
+}
 
 void	ft_putnbr_fd(int n, int fd)
 {
