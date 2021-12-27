@@ -6,14 +6,14 @@
 #    By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/27 20:37:54 by ojauregu          #+#    #+#              #
-#    Updated: 2021/12/27 21:04:39 by ojauregu         ###   ########.fr        #
+#    Updated: 2021/12/27 21:19:03 by ojauregu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME1		= client
 NAME2		= server
-NAME3		= client
-NAME4		= server
+NAME3		= client_bonus
+NAME4		= server_bonus
 C_FILES1	= ft_client.c\
 				ft_cli_fonc.c\
 				ft_cli_fonc_suite.c
@@ -50,13 +50,13 @@ $(NAME2):	$(OBJS2)
 			$(CC) $(CFLAGS) $(OBJS2) -o $(NAME2)
 
 $(NAME3):	$(OBJS3)
-			$(CC) $(CFLAGS) $(OBJS3) -o $(NAME1)
+			$(CC) $(CFLAGS) $(OBJS3) -o $(NAME3)
 
 $(NAME4):	$(OBJS4)
-			$(CC) $(CFLAGS) $(OBJS4) -o $(NAME2)
+			$(CC) $(CFLAGS) $(OBJS4) -o $(NAME4)
 
 
-bonus:		fclean $(NAME3) $(NAME4)
+bonus:		$(NAME3) $(NAME4)
 
 clean:
 			rm -f $(OBJS1) $(OBJS2) $(OBJS3) $(OBJS4)
