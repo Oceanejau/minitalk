@@ -6,11 +6,11 @@
 /*   By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 20:21:04 by ojauregu          #+#    #+#             */
-/*   Updated: 2021/12/27 20:21:08 by ojauregu         ###   ########.fr       */
+/*   Updated: 2021/12/27 20:52:21 by ojauregu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef MINITALK_H
-# define MINITALK_H
+#ifndef MINITALK_BONUS_H
+# define MINITALK_BONUS_H
 # include <signal.h>
 # define BUFFER 2048
 
