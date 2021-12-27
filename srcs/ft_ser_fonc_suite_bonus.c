@@ -5,11 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 19:25:03 by ojauregu          #+#    #+#             */
-/*   Updated: 2021/12/27 19:25:07 by ojauregu         ###   ########.fr       */
+/*   Created: 2021/12/27 20:27:39 by ojauregu          #+#    #+#             */
+/*   Updated: 2021/12/27 20:39:49 by ojauregu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 void	ft_bzero(void *s, size_t n)
 {

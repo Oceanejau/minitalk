@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/27 19:27:28 by ojauregu          #+#    #+#              #
-#    Updated: 2021/12/27 19:39:43 by ojauregu         ###   ########.fr        #
+#    Created: 2021/12/27 20:37:54 by ojauregu          #+#    #+#              #
+#    Updated: 2021/12/27 20:42:40 by ojauregu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,12 @@ C_FILES4	= ft_server_bonus.c\
 			  ft_ser_fonc_suite_bonus.c
 SRCS1		= $(addprefix srcs/,$(C_FILES1))
 SRCS2		= $(addprefix srcs/,$(C_FILES2))
-SRCS3		= $(addprefix srcs/,$(C_FILES1))
-SRCS4		= $(addprefix srcs/,$(C_FILES2))
+SRCS3		= $(addprefix srcs/,$(C_FILES3))
+SRCS4		= $(addprefix srcs/,$(C_FILES4))
 OBJS1		= $(SRCS1:.c=.o)
 OBJS2		= $(SRCS2:.c=.o)
 OBJS3		= $(SRCS3:.c=.o)
 OBJS4		= $(SRCS4:.c=.o)
-
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror	\
 			  -I ./includes
@@ -55,12 +54,11 @@ $(NAME3):	$(OBJS3)
 
 $(NAME4):	$(OBJS4)
 			$(CC) $(CFLAGS) $(OBJS4) -o $(NAME2)
-
 clean:
 			rm -f $(OBJS1) $(OBJS2) $(OBJS3) $(OBJS4)
 
 fclean:		clean
-			rm -f $(NAME1) $(NAME2) $(NAME3) $(NAME4)
+			rm -f $(NAME1) $(NAME2) $(OBJS3) $(OBJS4)
 
 re:			fclean all
 

@@ -5,11 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 17:20:09 by ojauregu          #+#    #+#             */
-/*   Updated: 2021/12/27 17:45:23 by ojauregu         ###   ########.fr       */
+/*   Created: 2021/12/27 20:29:34 by ojauregu          #+#    #+#             */
+/*   Updated: 2021/12/27 20:29:40 by ojauregu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
+#include <unistd.h>
 #include "minitalk.h"
+
+t_minit			g_minit;
 
 void	ft_run(int sig, siginfo_t *info, void *context)
 {

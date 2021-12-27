@@ -5,11 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 17:47:19 by ojauregu          #+#    #+#             */
-/*   Updated: 2021/12/27 17:47:21 by ojauregu         ###   ########.fr       */
+/*   Created: 2021/12/27 20:28:57 by ojauregu          #+#    #+#             */
+/*   Updated: 2021/12/27 20:39:03 by ojauregu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "minitalk.h"
+#include <stdlib.h>
+#include <unistd.h>
+#include "minitalk_bonus.h"
 
 void	ft_recu(int signal)
 {

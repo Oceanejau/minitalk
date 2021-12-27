@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 17:16:23 by ojauregu          #+#    #+#             */
-/*   Updated: 2021/12/27 19:47:44 by ojauregu         ###   ########.fr       */
+/*   Created: 2021/12/27 20:21:19 by ojauregu          #+#    #+#             */
+/*   Updated: 2021/12/27 20:21:22 by ojauregu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef MINITALK_H
 # define MINITALK_H
 # include <signal.h>
 # define BUFFER 2048
-# include <unistd.h>
-# include <stdlib.h>
 
 typedef struct s_minit
 {
@@ -25,5 +23,11 @@ typedef struct s_minit
 	int				over;
 }				t_minit;
 
-t_minit			g_minit;
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+int		ft_atoi(const char *str);
+void	ft_bzero(void *s, size_t n);
+
 #endif

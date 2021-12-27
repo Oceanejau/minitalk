@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojauregu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 19:26:04 by ojauregu          #+#    #+#             */
-/*   Updated: 2021/12/27 19:26:10 by ojauregu         ###   ########.fr       */
+/*   Created: 2021/12/27 20:27:02 by ojauregu          #+#    #+#             */
+/*   Updated: 2021/12/27 20:27:05 by ojauregu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 #include "minitalk.h"
 
 void	ft_putchar_fd(char c, int fd)
